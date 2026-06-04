@@ -556,6 +556,51 @@ img { max-width: 100%; display: block; }
 .footer a:hover { text-decoration: underline; }
 
 /* ===========================
+   HOBBIES
+=========================== */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.hobby-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.hobby-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.hobby-emoji {
+  font-size: 2.6rem;
+  display: block;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.hobby-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.hobby-desc {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ===========================
    GALLERY
 =========================== */
 .gallery-sub {

@@ -240,7 +240,85 @@
 
 
 /* =============================================
-   6. PALETTE THEME SWITCHER
+   6. GALLERY LIGHTBOX
+============================================= */
+(function () {
+  const photos = [
+    { src: 'KakaoTalk_20260604_163520540.jpg',    caption: 'Two Jack Lake · Banff, Canada' },
+    { src: 'KakaoTalk_20260604_163520540_01.jpg', caption: 'Rocky Mountain Viewpoint · Alberta' },
+    { src: 'KakaoTalk_20260604_163520540_02.jpg', caption: 'Banff Ave · Banff townsite' },
+  ];
+
+  /* 라이트박스 DOM 생성 */
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = `
+    <div class="lb-backdrop"></div>
+    <div class="lb-content">
+      <button class="lb-close" aria-label="닫기"><i class="fas fa-times"></i></button>
+      <button class="lb-prev"  aria-label="이전"><i class="fas fa-chevron-left"></i></button>
+      <img class="lb-img" src="" alt="" />
+      <button class="lb-next"  aria-label="다음"><i class="fas fa-chevron-right"></i></button>
+      <div class="lb-caption-bar">
+        <i class="fas fa-map-marker-alt"></i>
+        <span class="lb-caption-text"></span>
+        <span class="lb-counter"></span>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(lb);
+
+  const lbImg     = lb.querySelector('.lb-img');
+  const lbCaption = lb.querySelector('.lb-caption-text');
+  const lbCounter = lb.querySelector('.lb-counter');
+  let current = 0;
+
+  function show(idx) {
+    current = (idx + photos.length) % photos.length;
+    const p = photos[current];
+    lbImg.src = p.src;
+    lbImg.alt = p.caption;
+    lbCaption.textContent = p.caption;
+    lbCounter.textContent = `${current + 1} / ${photos.length}`;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';  /* 메모리 해제 */
+  }
+
+  /* 갤러리 아이템 클릭 */
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => show(+item.dataset.idx));
+  });
+
+  lb.querySelector('.lb-backdrop').addEventListener('click', close);
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', () => show(current - 1));
+  lb.querySelector('.lb-next').addEventListener('click', () => show(current + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+
+  /* 터치 스와이프 */
+  let touchX = 0;
+  lb.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) show(dx < 0 ? current + 1 : current - 1);
+  });
+})();
+
+
+/* =============================================
+   8. PALETTE THEME SWITCHER
 ============================================= */
 (function () {
   const themeLink  = document.getElementById('theme-css');
@@ -279,7 +357,7 @@
 
 
 /* =============================================
-   8. STICKY NAV — ACTIVE LINK ON SCROLL
+   9. STICKY NAV — ACTIVE LINK ON SCROLL
 ============================================= */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.sticky-nav a');
@@ -300,7 +378,7 @@ sections.forEach(s => navObserver.observe(s));
 
 
 /* =============================================
-   9. SECTION CARDS — SCROLL ENTRANCE
+   10. SECTION CARDS — SCROLL ENTRANCE
 ============================================= */
 const cards = document.querySelectorAll(
   '.skill-category, .timeline-item, .project-card, .cert-item, .about-content'

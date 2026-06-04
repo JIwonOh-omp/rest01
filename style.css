@@ -419,6 +419,164 @@ img { max-width: 100%; display: block; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
 /* ===========================
+   TIMELINE — HIGHLIGHT (AI 교육)
+=========================== */
+.dot-highlight {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 0 0 2px var(--accent), 0 0 12px rgba(6,182,212,.4);
+  width: 16px;
+  height: 16px;
+  left: -25px;
+  top: 11px;
+}
+
+.tl-highlight {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #f0f9ff, #fff);
+  box-shadow: 0 4px 24px rgba(6,182,212,.12);
+}
+
+/* ===========================
+   AI CAREER TRANSITION
+=========================== */
+.career-transition {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.transition-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb, #06b6d4);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  font-size: .95rem;
+}
+
+.transition-badge i {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.transition-badge strong { display: block; font-size: 1rem; margin-bottom: 2px; }
+.transition-badge span  { font-size: .85rem; opacity: .85; }
+
+.transition-steps {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  flex: 1;
+  min-width: 140px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.step-card.step-active {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, #eff6ff, #fff);
+  box-shadow: 0 4px 24px rgba(79,143,255,.18);
+}
+
+.step-icon {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.step-card.step-done .step-icon  { color: #10b981; }
+.step-card.step-active .step-icon { color: var(--primary); }
+.step-card.step-upcoming .step-icon { color: var(--muted); }
+
+.step-body h4 {
+  font-size: .9rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.step-body p {
+  font-size: .8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.step-label {
+  font-size: .72rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 2px 10px;
+  align-self: flex-start;
+}
+
+.step-label.done     { background: #d1fae5; color: #065f46; }
+.step-label.active   { background: #dbeafe; color: #1e40af; }
+.step-label.upcoming { background: #f1f5f9; color: var(--muted); }
+
+.step-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  color: var(--primary);
+  font-size: .85rem;
+  flex-shrink: 0;
+}
+
+.learning-now {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  box-shadow: var(--shadow);
+}
+
+.learning-now h3 {
+  font-size: .95rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--primary-dk);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.learning-now h3 i { color: #f97316; }
+
+.learning-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.ltag {
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: .84rem;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .transition-steps {
+    flex-direction: column;
+  }
+  .step-arrow {
+    transform: rotate(90deg);
+    justify-content: center;
+    padding: 4px 0;
+  }
+}
+
+/* ===========================
    CERTIFICATIONS
 =========================== */
 .cert-list { display: flex; flex-direction: column; gap: 14px; }

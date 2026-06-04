@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>오지원 이력서</title>
+  <title>오지원 이력서 | QA Engineer → AI Developer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,29 +12,28 @@
 </head>
 <body>
 
-  <!-- ===== HEADER / HERO ===== -->
+  <!-- ===== HERO ===== -->
   <header class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
       <div class="profile-photo">
-        <!-- 사진 파일명을 photo.jpg 로 업로드해주세요 -->
-        <img src="images/photo.jpg" alt="프로필 사진" onerror="this.src='https://via.placeholder.com/160x160/4F8FFF/ffffff?text=JW'" />
+        <img src="images/photo.jpg" alt="오지원 프로필 사진" />
       </div>
       <div class="hero-text">
         <h1 class="name">오 지 원</h1>
-        <p class="tagline"><!-- 직함 / 한 줄 소개 --></p>
+        <p class="tagline">QA Engineer &nbsp;→&nbsp; AI Developer</p>
         <div class="contact-bar">
-          <a href="mailto:email@example.com" class="contact-item">
+          <a href="mailto:jiwon98oh@naver.com" class="contact-item">
             <i class="fa fa-envelope"></i>
-            <span>email@example.com</span>
+            <span>jiwon98oh@naver.com</span>
           </a>
-          <a href="tel:010-0000-0000" class="contact-item">
+          <a href="tel:010-2877-6556" class="contact-item">
             <i class="fa fa-phone"></i>
-            <span>010-0000-0000</span>
+            <span>010-2877-6556</span>
           </a>
           <a href="https://github.com/JIwonOh-omp" target="_blank" class="contact-item">
             <i class="fab fa-github"></i>
-            <span>GitHub</span>
+            <span>JIwonOh-omp</span>
           </a>
         </div>
       </div>
@@ -45,7 +44,8 @@
   <nav class="sticky-nav">
     <ul>
       <li><a href="#about">소개</a></li>
-      <li><a href="#skills">기술</a></li>
+      <li><a href="#new-career">AI 커리어</a></li>
+      <li><a href="#skills">역량</a></li>
       <li><a href="#experience">경력</a></li>
       <li><a href="#education">학력</a></li>
       <li><a href="#projects">프로젝트</a></li>
@@ -60,47 +60,131 @@
       <h2 class="section-title"><span>소개</span></h2>
       <div class="about-content">
         <p class="about-text">
-          <!-- 자기소개를 여기에 작성해주세요 -->
-          안녕하세요. 저는 ...
+          화공생명공학을 전공하고 한국콜마에서 GMP 기반 QA 실무(밸리데이션·변경관리·안정성시험)를
+          담당했습니다. 이후 캐나다에서 약 2년간 체류하며 글로벌 비즈니스 커뮤니케이션 역량을 쌓고,
+          현재는 <strong>AI 개발자</strong>로의 커리어 전환을 적극적으로 준비하고 있습니다.<br /><br />
+          품질관리에서 익힌 <em>데이터 기반 사고·꼼꼼한 문서화·프로세스 개선</em> 역량을 AI 개발에
+          접목하여, 실용적인 솔루션을 만드는 개발자로 성장하는 것이 목표입니다.
+          TOEIC 935 · OPIc AL 수준의 영어 실력을 바탕으로 글로벌 환경에서도 즉시 기여할 수 있습니다.
         </p>
+      </div>
+    </section>
+
+    <!-- ===== NEW CAREER — AI DEVELOPER ===== -->
+    <section id="new-career" class="section">
+      <h2 class="section-title"><span>AI 개발자 커리어 전환</span></h2>
+
+      <div class="career-transition">
+        <div class="transition-badge">
+          <i class="fas fa-robot"></i>
+          <div>
+            <strong>현재 진행 중</strong>
+            <span>AI 개발자 양성 교육 수강 (2026.06 ~)</span>
+          </div>
+        </div>
+
+        <div class="transition-steps">
+
+          <div class="step-card step-done">
+            <div class="step-icon"><i class="fas fa-flask"></i></div>
+            <div class="step-body">
+              <h4>QA 실무 경험</h4>
+              <p>GMP 데이터 분석·문서 체계화·프로세스 개선으로 <strong>논리적 사고력</strong>과
+                <strong>꼼꼼함</strong> 내재화</p>
+            </div>
+            <span class="step-label done">완료</span>
+          </div>
+
+          <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+
+          <div class="step-card step-done">
+            <div class="step-icon"><i class="fas fa-globe"></i></div>
+            <div class="step-body">
+              <h4>글로벌 역량 강화</h4>
+              <p>캐나다 2년 체류, 커피전문점 슈퍼바이저 승진으로 <strong>영어 실무 소통</strong> 검증</p>
+            </div>
+            <span class="step-label done">완료</span>
+          </div>
+
+          <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+
+          <div class="step-card step-active">
+            <div class="step-icon"><i class="fas fa-code"></i></div>
+            <div class="step-body">
+              <h4>AI 개발 학습</h4>
+              <p>Python · 머신러닝 · 웹 개발 기초부터 AI 서비스 구현까지 집중 교육 수강 중</p>
+            </div>
+            <span class="step-label active">진행 중</span>
+          </div>
+
+          <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+
+          <div class="step-card step-upcoming">
+            <div class="step-icon"><i class="fas fa-brain"></i></div>
+            <div class="step-body">
+              <h4>AI 개발자</h4>
+              <p>QA 도메인 지식 + AI 기술을 결합한 <strong>실용적인 AI 솔루션</strong> 개발자로 취업 목표</p>
+            </div>
+            <span class="step-label upcoming">목표</span>
+          </div>
+
+        </div>
+
+        <div class="learning-now">
+          <h3><i class="fas fa-fire"></i> 현재 학습 중</h3>
+          <div class="learning-tags">
+            <span class="ltag">Python</span>
+            <span class="ltag">HTML / CSS / JavaScript</span>
+            <span class="ltag">Git &amp; GitHub</span>
+            <span class="ltag">AI 기초 이론</span>
+            <span class="ltag">Claude Code (AI 개발 도구)</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ===== SKILLS ===== -->
     <section id="skills" class="section">
-      <h2 class="section-title"><span>기술 스택</span></h2>
+      <h2 class="section-title"><span>역량</span></h2>
       <div class="skills-grid">
 
         <div class="skill-category">
-          <h3><i class="fas fa-code"></i> 프론트엔드</h3>
+          <h3><i class="fas fa-code"></i> 개발 (학습 중)</h3>
           <div class="skill-tags">
+            <span class="tag">Python</span>
             <span class="tag">HTML5</span>
             <span class="tag">CSS3</span>
             <span class="tag">JavaScript</span>
-            <!-- 사용 기술 추가 -->
+            <span class="tag">Git / GitHub</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3><i class="fas fa-server"></i> 백엔드</h3>
+          <h3><i class="fas fa-flask"></i> QA / GMP</h3>
           <div class="skill-tags">
-            <span class="tag"><!-- 기술 --></span>
+            <span class="tag">밸리데이션 (PV·CV)</span>
+            <span class="tag">변경관리</span>
+            <span class="tag">안정성시험</span>
+            <span class="tag">APR</span>
+            <span class="tag">환경모니터링</span>
+            <span class="tag">FDA Audit</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3><i class="fas fa-database"></i> 데이터베이스</h3>
+          <h3><i class="fas fa-language"></i> 어학</h3>
           <div class="skill-tags">
-            <span class="tag"><!-- 기술 --></span>
+            <span class="tag">영어 — OPIc AL</span>
+            <span class="tag">TOEIC 935</span>
+            <span class="tag">비즈니스 영문 작성</span>
           </div>
         </div>
 
         <div class="skill-category">
           <h3><i class="fas fa-tools"></i> 도구 / 기타</h3>
           <div class="skill-tags">
-            <span class="tag">Git</span>
-            <span class="tag">GitHub</span>
-            <!-- 기술 추가 -->
+            <span class="tag">MS Word · Excel · PPT (상급)</span>
+            <span class="tag">Claude Code</span>
           </div>
         </div>
 
@@ -112,22 +196,59 @@
       <h2 class="section-title"><span>경력</span></h2>
       <div class="timeline">
 
+        <!-- AI 교육 -->
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-dot dot-highlight"></div>
+          <div class="timeline-content tl-highlight">
             <div class="timeline-header">
-              <h3 class="position">직책 / 포지션</h3>
-              <span class="period">2024.01 – 현재</span>
+              <h3 class="position">AI 개발자 양성 교육생</h3>
+              <span class="period">2026.06 – 현재</span>
             </div>
-            <p class="company"><i class="fas fa-building"></i> 회사명</p>
+            <p class="company"><i class="fas fa-laptop-code"></i> AI 개발자 교육 과정</p>
             <ul class="duties">
-              <li>업무 내용 1</li>
-              <li>업무 내용 2</li>
+              <li>Python, 웹 기초(HTML/CSS/JS), Git/GitHub 집중 학습</li>
+              <li>Claude Code 활용 AI 개발 실습</li>
+              <li>개인 이력서 웹사이트 프로젝트 진행 중 (이 사이트)</li>
             </ul>
           </div>
         </div>
 
-        <!-- 경력 항목 추가 -->
+        <!-- 캐나다 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="position">바리스타 → 슈퍼바이저</h3>
+              <span class="period">2023.08 – 2025.05</span>
+            </div>
+            <p class="company"><i class="fas fa-coffee"></i> 캐나다 커피전문점 (워킹홀리데이)</p>
+            <ul class="duties">
+              <li>유일한 외국인으로 입사하여 언어·문화 장벽을 극복하고 업무 조기 숙달</li>
+              <li>마감 체크리스트 구조화·배포 → 매장 청결도 향상 및 잔업 감소 기여</li>
+              <li>성과 인정을 받아 슈퍼바이저 승진, 팀원 스케줄링 및 교육 담당</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 한국콜마 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="position">품질혁신팀 사원 (QA)</h3>
+              <span class="period">2022.07 – 2023.08</span>
+            </div>
+            <p class="company"><i class="fas fa-industry"></i> (주)한국콜마 · 품질부서</p>
+            <ul class="duties">
+              <li>OTC 제품 공정·세척 밸리데이션(PV·CV) Protocol / Report 작성 및 재밸리데이션 관리</li>
+              <li>변경관리 전 과정(영향 검토 → 고객사 통지 → 검증 완료) 문서화 및 이력 관리</li>
+              <li>변경관리 신청 가이드 자체 제작·배포 → 부서 간 처리 시간 <strong>50% 단축</strong></li>
+              <li>가속·장기·On-going 안정성시험 일정 관리 및 결과 모니터링</li>
+              <li>FDA Audit 준비 — 영문 SOP 및 밸리데이션 문서 검토·정비</li>
+              <li>전사 소수점 표기 표준 수립 → 내부 감사 무(無)지적 달성</li>
+            </ul>
+          </div>
+        </div>
 
       </div>
     </section>
@@ -141,10 +262,21 @@
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-header">
-              <h3 class="position">학교명</h3>
-              <span class="period">20XX.03 – 20XX.02</span>
+              <h3 class="position">숙명여자대학교</h3>
+              <span class="period">2017.03 – 2022.08</span>
             </div>
-            <p class="company"><i class="fas fa-graduation-cap"></i> 학과명 졸업</p>
+            <p class="company"><i class="fas fa-graduation-cap"></i> 화공생명공학과 졸업 &nbsp;(GPA 3.8 / 4.5)</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="position">야탑고등학교</h3>
+              <span class="period">2014.03 – 2017.02</span>
+            </div>
+            <p class="company"><i class="fas fa-school"></i> 인문계 졸업</p>
           </div>
         </div>
 
@@ -158,40 +290,72 @@
 
         <div class="project-card">
           <div class="project-header">
-            <h3 class="project-name">프로젝트명</h3>
+            <h3 class="project-name">개인 이력서 웹사이트</h3>
             <div class="project-links">
-              <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/JIwonOh-omp/rest01" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
-          <p class="project-period">20XX.XX – 20XX.XX</p>
-          <p class="project-desc">프로젝트 설명을 여기에 작성하세요.</p>
+          <p class="project-period">2026.06</p>
+          <p class="project-desc">
+            AI 개발 교육 과정 중 Claude Code를 활용해 직접 제작한 반응형 이력서 웹사이트.
+            HTML / CSS / JavaScript 기초를 익히고, Git 워크플로우와 GitHub 배포를 실습.
+          </p>
           <div class="project-tags">
-            <span class="tag small">기술1</span>
-            <span class="tag small">기술2</span>
+            <span class="tag small">HTML5</span>
+            <span class="tag small">CSS3</span>
+            <span class="tag small">JavaScript</span>
+            <span class="tag small">Git</span>
+            <span class="tag small">Claude Code</span>
           </div>
         </div>
 
-        <!-- 프로젝트 카드 추가 -->
+        <!-- 프로젝트가 쌓이면 카드를 추가하세요 -->
 
       </div>
     </section>
 
     <!-- ===== CERTIFICATIONS ===== -->
     <section id="certifications" class="section">
-      <h2 class="section-title"><span>자격증 / 수상</span></h2>
+      <h2 class="section-title"><span>자격증 / 어학</span></h2>
       <div class="cert-list">
+
+        <div class="cert-item">
+          <i class="fas fa-language cert-icon"></i>
+          <div class="cert-info">
+            <strong>OPIc AL (Advanced Low)</strong>
+            <span class="cert-issuer">ACTFL / OPIC</span>
+          </div>
+          <span class="cert-date">영어 말하기</span>
+        </div>
+
+        <div class="cert-item">
+          <i class="fas fa-language cert-icon"></i>
+          <div class="cert-info">
+            <strong>TOEIC 935</strong>
+            <span class="cert-issuer">ETS</span>
+          </div>
+          <span class="cert-date">영어 독해·청취</span>
+        </div>
 
         <div class="cert-item">
           <i class="fas fa-certificate cert-icon"></i>
           <div class="cert-info">
-            <strong>자격증명</strong>
-            <span class="cert-issuer">발행기관</span>
+            <strong>컴퓨터활용능력 2급</strong>
+            <span class="cert-issuer">대한상공회의소</span>
           </div>
-          <span class="cert-date">20XX.XX</span>
+          <span class="cert-date">2021.02</span>
         </div>
 
-        <!-- 자격증 항목 추가 -->
+        <div class="cert-item">
+          <i class="fas fa-car cert-icon"></i>
+          <div class="cert-info">
+            <strong>자동차운전면허 2종보통</strong>
+            <span class="cert-issuer">경찰청</span>
+          </div>
+          <span class="cert-date">2021.10</span>
+        </div>
 
       </div>
     </section>
@@ -200,7 +364,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <p>© 2026 오지원 · <a href="https://github.com/JIwonOh-omp/rest01" target="_blank">GitHub</a></p>
+    <p>© 2026 오지원 &nbsp;·&nbsp; <a href="https://github.com/JIwonOh-omp/rest01" target="_blank">GitHub</a></p>
   </footer>
 
   <script src="script.js"></script>

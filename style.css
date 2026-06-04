@@ -46,6 +46,13 @@ img { max-width: 100%; display: block; }
   z-index: 0;
 }
 
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -55,13 +62,44 @@ img { max-width: 100%; display: block; }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   max-width: 700px;
   margin: 0 auto;
+}
+
+/* hero entrance */
+.hero-item {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+@keyframes heroFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* photo float */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* cursor blink */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  color: rgba(255,255,255,.8);
+  animation: blink .75s step-end infinite;
+  margin-left: 1px;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
 .profile-photo {

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오지원 이력서</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / HERO ===== -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="profile-photo">
+        <!-- 사진 파일명을 photo.jpg 로 업로드해주세요 -->
+        <img src="images/photo.jpg" alt="프로필 사진" onerror="this.src='https://via.placeholder.com/160x160/4F8FFF/ffffff?text=JW'" />
+      </div>
+      <div class="hero-text">
+        <h1 class="name">오 지 원</h1>
+        <p class="tagline"><!-- 직함 / 한 줄 소개 --></p>
+        <div class="contact-bar">
+          <a href="mailto:email@example.com" class="contact-item">
+            <i class="fa fa-envelope"></i>
+            <span>email@example.com</span>
+          </a>
+          <a href="tel:010-0000-0000" class="contact-item">
+            <i class="fa fa-phone"></i>
+            <span>010-0000-0000</span>
+          </a>
+          <a href="https://github.com/JIwonOh-omp" target="_blank" class="contact-item">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="#about">소개</a></li>
+      <li><a href="#skills">기술</a></li>
+      <li><a href="#experience">경력</a></li>
+      <li><a href="#education">학력</a></li>
+      <li><a href="#projects">프로젝트</a></li>
+      <li><a href="#certifications">자격증</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <h2 class="section-title"><span>소개</span></h2>
+      <div class="about-content">
+        <p class="about-text">
+          <!-- 자기소개를 여기에 작성해주세요 -->
+          안녕하세요. 저는 ...
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section">
+      <h2 class="section-title"><span>기술 스택</span></h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> 프론트엔드</h3>
+          <div class="skill-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <!-- 사용 기술 추가 -->
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-server"></i> 백엔드</h3>
+          <div class="skill-tags">
+            <span class="tag"><!-- 기술 --></span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-database"></i> 데이터베이스</h3>
+          <div class="skill-tags">
+            <span class="tag"><!-- 기술 --></span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-tools"></i> 도구 / 기타</h3>
+          <div class="skill-tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <!-- 기술 추가 -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section">
+      <h2 class="section-title"><span>경력</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="position">직책 / 포지션</h3>
+              <span class="period">2024.01 – 현재</span>
+            </div>
+            <p class="company"><i class="fas fa-building"></i> 회사명</p>
+            <ul class="duties">
+              <li>업무 내용 1</li>
+              <li>업무 내용 2</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 경력 항목 추가 -->
+
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="section">
+      <h2 class="section-title"><span>학력</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="position">학교명</h3>
+              <span class="period">20XX.03 – 20XX.02</span>
+            </div>
+            <p class="company"><i class="fas fa-graduation-cap"></i> 학과명 졸업</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+      <h2 class="section-title"><span>프로젝트</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-name">프로젝트명</h3>
+            <div class="project-links">
+              <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <p class="project-period">20XX.XX – 20XX.XX</p>
+          <p class="project-desc">프로젝트 설명을 여기에 작성하세요.</p>
+          <div class="project-tags">
+            <span class="tag small">기술1</span>
+            <span class="tag small">기술2</span>
+          </div>
+        </div>
+
+        <!-- 프로젝트 카드 추가 -->
+
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section id="certifications" class="section">
+      <h2 class="section-title"><span>자격증 / 수상</span></h2>
+      <div class="cert-list">
+
+        <div class="cert-item">
+          <i class="fas fa-certificate cert-icon"></i>
+          <div class="cert-info">
+            <strong>자격증명</strong>
+            <span class="cert-issuer">발행기관</span>
+          </div>
+          <span class="cert-date">20XX.XX</span>
+        </div>
+
+        <!-- 자격증 항목 추가 -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2026 오지원 · <a href="https://github.com/JIwonOh-omp/rest01" target="_blank">GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

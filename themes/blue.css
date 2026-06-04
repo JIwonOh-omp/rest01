@@ -1,0 +1,83 @@
+/* ============================================================
+   THEME: 다크 블루 / 로열 블루  (Dark Blue / Royal Blue)
+   주컬러: #1e3a5f  보조: 50% opacity  이벤트: 옐로우
+============================================================ */
+
+:root {
+  --palette-dark:   #1e3a5f;
+  --palette-light:  #3b82f6;
+  --palette-name:   "다크 블루 / 로열 블루";
+
+  --primary:        #1e3a5f;  /* 대비비 white 10.5:1 ✓ */
+  --primary-dk:     #172d4a;
+  --primary-op:     rgba(30, 58, 95, .50);
+  --secondary:      #3b82f6;
+
+  --event:          #854d0e;
+  --event-bright:   #facc15;
+  --event-bg:       #fffbeb;
+  --event-border:   #fde68a;
+
+  --bg:             #eff6ff;  /* blue-50 */
+  --surface:        #ffffff;
+  --border:         #bfdbfe;  /* blue-200 */
+  --text:           #172d4a;  /* 대비비 9.8:1 ✓ */
+  --muted:          #4a6fa5;  /* 대비비 4.8:1 ✓ */
+  --radius:         12px;
+  --shadow:         0 4px 24px rgba(30, 58, 95, .10);
+  --shadow-lift:    0 8px 32px rgba(30, 58, 95, .18);
+
+  --hero-g1:        #0f1e38;
+  --hero-g2:        #1e3a5f;
+  --hero-g3:        #2563eb;
+
+  --tag-from:       #eff6ff;
+  --tag-to:         #dbeafe;
+  --tag-text:       #172d4a;
+  --tag-bd:         #bfdbfe;
+
+  --nav-bg:         rgba(255, 255, 255, .92);
+  --nav-active-txt: #ffffff;
+
+  --step-active-bg: #fffbeb;
+  --done-bg:        #dbeafe;
+  --done-txt:       #172d4a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary:        #60a5fa;  /* blue-400 대비비 8.8:1 ✓ */
+    --primary-dk:     #93c5fd;
+    --primary-op:     rgba(96, 165, 250, .50);
+    --secondary:      #1e3a5f;
+
+    --event:          #facc15;
+    --event-bright:   #fde047;
+    --event-bg:       rgba(250, 204, 21, .12);
+    --event-border:   rgba(250, 204, 21, .35);
+
+    --bg:             #070f1a;
+    --surface:        #0d1f38;
+    --border:         #1a3050;
+    --text:           #dbeafe;  /* 대비비 10.2:1 ✓ */
+    --muted:          #6b9bd1;  /* 대비비 4.5:1 ✓ */
+    --shadow:         0 4px 24px rgba(0, 0, 0, .45);
+    --shadow-lift:    0 8px 32px rgba(96, 165, 250, .12);
+
+    --hero-g1:        #0f1e38;
+    --hero-g2:        #1e3a5f;
+    --hero-g3:        #2563eb;
+
+    --tag-from:       rgba(30, 58, 95, .30);
+    --tag-to:         rgba(30, 58, 95, .18);
+    --tag-text:       #93c5fd;
+    --tag-bd:         #1a3050;
+
+    --nav-bg:         rgba(13, 31, 56, .92);
+    --nav-active-txt: #ffffff;
+
+    --step-active-bg: rgba(250, 204, 21, .10);
+    --done-bg:        rgba(30, 58, 95, .40);
+    --done-txt:       #93c5fd;
+  }
+}

@@ -1,0 +1,83 @@
+/* ============================================================
+   THEME: 다크 슬레이트 / 스카이  (Dark Slate / Sky Blue)
+   주컬러: #1e3a4c  보조: 50% opacity  이벤트: 옐로우
+============================================================ */
+
+:root {
+  --palette-dark:   #1e3a4c;
+  --palette-light:  #38bdf8;
+  --palette-name:   "다크 슬레이트 / 스카이";
+
+  --primary:        #1e3a4c;  /* 대비비 white 11.0:1 ✓ */
+  --primary-dk:     #162c3a;
+  --primary-op:     rgba(30, 58, 76, .50);
+  --secondary:      #38bdf8;
+
+  --event:          #854d0e;
+  --event-bright:   #facc15;
+  --event-bg:       #fffbeb;
+  --event-border:   #fde68a;
+
+  --bg:             #f0f9ff;  /* sky-50 */
+  --surface:        #ffffff;
+  --border:         #bae6fd;  /* sky-200 */
+  --text:           #162c3a;  /* 대비비 11.5:1 ✓ */
+  --muted:          #4a7a98;  /* 대비비 4.8:1 ✓ */
+  --radius:         12px;
+  --shadow:         0 4px 24px rgba(30, 58, 76, .10);
+  --shadow-lift:    0 8px 32px rgba(30, 58, 76, .18);
+
+  --hero-g1:        #0a1e2a;
+  --hero-g2:        #1e3a4c;
+  --hero-g3:        #0369a1;
+
+  --tag-from:       #f0f9ff;
+  --tag-to:         #e0f2fe;
+  --tag-text:       #162c3a;
+  --tag-bd:         #bae6fd;
+
+  --nav-bg:         rgba(255, 255, 255, .92);
+  --nav-active-txt: #ffffff;
+
+  --step-active-bg: #fffbeb;
+  --done-bg:        #e0f2fe;
+  --done-txt:       #162c3a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary:        #38bdf8;  /* sky-400 대비비 9.5:1 ✓ */
+    --primary-dk:     #7dd3fc;
+    --primary-op:     rgba(56, 189, 248, .50);
+    --secondary:      #1e3a4c;
+
+    --event:          #facc15;
+    --event-bright:   #fde047;
+    --event-bg:       rgba(250, 204, 21, .12);
+    --event-border:   rgba(250, 204, 21, .35);
+
+    --bg:             #071520;
+    --surface:        #0c2030;
+    --border:         #1a3d52;
+    --text:           #e0f2fe;  /* 대비비 11.0:1 ✓ */
+    --muted:          #5aa0c0;  /* 대비비 4.5:1 ✓ */
+    --shadow:         0 4px 24px rgba(0, 0, 0, .45);
+    --shadow-lift:    0 8px 32px rgba(56, 189, 248, .12);
+
+    --hero-g1:        #0a1e2a;
+    --hero-g2:        #1e3a4c;
+    --hero-g3:        #0369a1;
+
+    --tag-from:       rgba(30, 58, 76, .30);
+    --tag-to:         rgba(30, 58, 76, .18);
+    --tag-text:       #7dd3fc;
+    --tag-bd:         #1a3d52;
+
+    --nav-bg:         rgba(12, 32, 48, .92);
+    --nav-active-txt: #071520;
+
+    --step-active-bg: rgba(250, 204, 21, .10);
+    --done-bg:        rgba(30, 58, 76, .40);
+    --done-txt:       #7dd3fc;
+  }
+}

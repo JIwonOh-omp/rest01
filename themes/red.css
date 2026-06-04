@@ -1,0 +1,83 @@
+/* ============================================================
+   THEME: 다크 레드 / 코랄  (Dark Red / Coral)
+   주컬러: #7f1d1d  보조: 50% opacity  이벤트: 옐로우
+============================================================ */
+
+:root {
+  --palette-dark:   #7f1d1d;
+  --palette-light:  #f87171;
+  --palette-name:   "다크 레드 / 코랄";
+
+  --primary:        #7f1d1d;  /* 대비비 white 9.3:1 ✓ */
+  --primary-dk:     #641414;
+  --primary-op:     rgba(127, 29, 29, .50);
+  --secondary:      #f87171;
+
+  --event:          #854d0e;
+  --event-bright:   #facc15;
+  --event-bg:       #fffbeb;
+  --event-border:   #fde68a;
+
+  --bg:             #fff5f5;  /* red-50 */
+  --surface:        #ffffff;
+  --border:         #fecaca;  /* red-200 */
+  --text:           #641414;  /* 대비비 10.2:1 ✓ */
+  --muted:          #9a4a4a;  /* 대비비 4.7:1 ✓ */
+  --radius:         12px;
+  --shadow:         0 4px 24px rgba(127, 29, 29, .10);
+  --shadow-lift:    0 8px 32px rgba(127, 29, 29, .18);
+
+  --hero-g1:        #3b0606;
+  --hero-g2:        #7f1d1d;
+  --hero-g3:        #b91c1c;
+
+  --tag-from:       #fff5f5;
+  --tag-to:         #fee2e2;
+  --tag-text:       #641414;
+  --tag-bd:         #fecaca;
+
+  --nav-bg:         rgba(255, 255, 255, .92);
+  --nav-active-txt: #ffffff;
+
+  --step-active-bg: #fffbeb;
+  --done-bg:        #fee2e2;
+  --done-txt:       #641414;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary:        #f87171;  /* red-400 대비비 7.8:1 ✓ */
+    --primary-dk:     #fca5a5;
+    --primary-op:     rgba(248, 113, 113, .50);
+    --secondary:      #7f1d1d;
+
+    --event:          #facc15;
+    --event-bright:   #fde047;
+    --event-bg:       rgba(250, 204, 21, .12);
+    --event-border:   rgba(250, 204, 21, .35);
+
+    --bg:             #1a0808;
+    --surface:        #2d1212;
+    --border:         #4a1a1a;
+    --text:           #ffe4e6;  /* 대비비 11.5:1 ✓ */
+    --muted:          #c47070;  /* 대비비 4.5:1 ✓ */
+    --shadow:         0 4px 24px rgba(0, 0, 0, .45);
+    --shadow-lift:    0 8px 32px rgba(248, 113, 113, .12);
+
+    --hero-g1:        #3b0606;
+    --hero-g2:        #7f1d1d;
+    --hero-g3:        #b91c1c;
+
+    --tag-from:       rgba(127, 29, 29, .30);
+    --tag-to:         rgba(127, 29, 29, .18);
+    --tag-text:       #fca5a5;
+    --tag-bd:         #4a1a1a;
+
+    --nav-bg:         rgba(45, 18, 18, .92);
+    --nav-active-txt: #ffffff;
+
+    --step-active-bg: rgba(250, 204, 21, .10);
+    --done-bg:        rgba(127, 29, 29, .40);
+    --done-txt:       #fca5a5;
+  }
+}

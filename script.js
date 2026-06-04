@@ -240,7 +240,46 @@
 
 
 /* =============================================
-   6. STICKY NAV — ACTIVE LINK ON SCROLL
+   6. PALETTE THEME SWITCHER
+============================================= */
+(function () {
+  const themeLink  = document.getElementById('theme-css');
+  const panel      = document.getElementById('palettePanel');
+  const toggleBtn  = document.getElementById('paletteToggle');
+  const swatches   = document.querySelectorAll('.ps');
+
+  /* 저장된 테마 복원 */
+  const saved = localStorage.getItem('resume-theme') || 'green';
+  applyTheme(saved);
+
+  toggleBtn.addEventListener('click', () => {
+    panel.classList.toggle('open');
+  });
+
+  /* 패널 외부 클릭 시 닫기 */
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#palettePicker')) {
+      panel.classList.remove('open');
+    }
+  });
+
+  swatches.forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyTheme(btn.dataset.theme);
+      panel.classList.remove('open');
+    });
+  });
+
+  function applyTheme(theme) {
+    themeLink.href = `themes/${theme}.css`;
+    localStorage.setItem('resume-theme', theme);
+    swatches.forEach(b => b.classList.toggle('active', b.dataset.theme === theme));
+  }
+})();
+
+
+/* =============================================
+   8. STICKY NAV — ACTIVE LINK ON SCROLL
 ============================================= */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.sticky-nav a');
@@ -261,7 +300,7 @@ sections.forEach(s => navObserver.observe(s));
 
 
 /* =============================================
-   7. SECTION CARDS — SCROLL ENTRANCE
+   9. SECTION CARDS — SCROLL ENTRANCE
 ============================================= */
 const cards = document.querySelectorAll(
   '.skill-category, .timeline-item, .project-card, .cert-item, .about-content'

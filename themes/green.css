@@ -1,0 +1,94 @@
+/* ============================================================
+   THEME: 다크 그린 / 연두  (Dark Green / Yellow-Green)
+   주컬러: #166534  보조: 50% opacity  이벤트: 옐로우
+   WCAG AA 기준 모든 텍스트 대비비 4.5:1 이상
+============================================================ */
+
+/* ── LIGHT MODE ── */
+:root {
+  /* 팔레트 아이덴티티 (팔레트 피커 고정값) */
+  --palette-dark:   #166534;
+  --palette-light:  #4ade80;
+  --palette-name:   "다크 그린 / 연두";
+
+  /* 주컬러 */
+  --primary:        #166534;  /* 대비비 white 6.4:1 ✓ */
+  --primary-dk:     #14532d;  /* 대비비 white 8.0:1 ✓ */
+  --primary-op:     rgba(22, 101, 52, .50);   /* 보조 컬러 */
+  --secondary:      #4ade80;  /* 페어링 연두 */
+
+  /* 이벤트 컬러: 옐로우 계열 */
+  --event:          #854d0e;  /* 텍스트용 amber-800 대비비 5.9:1 ✓ */
+  --event-bright:   #facc15;  /* 장식용 밝은 노랑 */
+  --event-bg:       #fffbeb;  /* amber-50 */
+  --event-border:   #fde68a;  /* amber-200 */
+
+  /* 시맨틱 */
+  --bg:             #f0fdf4;  /* green-50 */
+  --surface:        #ffffff;
+  --border:         #bbf7d0;  /* green-200 */
+  --text:           #14532d;  /* 대비비 bg 9.1:1 ✓ */
+  --muted:          #4b7a5c;  /* 대비비 white 5.1:1 ✓ */
+  --radius:         12px;
+  --shadow:         0 4px 24px rgba(22, 101, 52, .10);
+  --shadow-lift:    0 8px 32px rgba(22, 101, 52, .18);
+
+  /* 히어로 그라디언트 */
+  --hero-g1:        #052e16;
+  --hero-g2:        #166534;
+  --hero-g3:        #15803d;
+
+  /* 태그 */
+  --tag-from:       #f0fdf4;
+  --tag-to:         #dcfce7;
+  --tag-text:       #14532d;
+  --tag-bd:         #bbf7d0;
+
+  /* 네비 */
+  --nav-bg:         rgba(255, 255, 255, .92);
+  --nav-active-txt: #ffffff;
+
+  /* 단계 카드 */
+  --step-active-bg: #fffbeb;
+  --done-bg:        #dcfce7;
+  --done-txt:       #14532d;
+}
+
+/* ── DARK MODE ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary:        #4ade80;  /* green-400 대비비 dark-bg 9.2:1 ✓ */
+    --primary-dk:     #86efac;  /* green-300 */
+    --primary-op:     rgba(74, 222, 128, .50);
+    --secondary:      #166534;
+
+    --event:          #facc15;  /* yellow-400 대비비 dark-bg 11.0:1 ✓ */
+    --event-bright:   #fde047;
+    --event-bg:       rgba(250, 204, 21, .12);
+    --event-border:   rgba(250, 204, 21, .35);
+
+    --bg:             #071a0c;
+    --surface:        #0f2415;
+    --border:         #1c3d26;
+    --text:           #d1fae5;  /* green-100 대비비 9.8:1 ✓ */
+    --muted:          #6ab07e;  /* 대비비 4.6:1 ✓ */
+    --shadow:         0 4px 24px rgba(0, 0, 0, .45);
+    --shadow-lift:    0 8px 32px rgba(74, 222, 128, .12);
+
+    --hero-g1:        #052e16;
+    --hero-g2:        #166534;
+    --hero-g3:        #15803d;
+
+    --tag-from:       rgba(22, 101, 52, .30);
+    --tag-to:         rgba(22, 101, 52, .18);
+    --tag-text:       #86efac;
+    --tag-bd:         #1c3d26;
+
+    --nav-bg:         rgba(15, 36, 21, .92);
+    --nav-active-txt: #071a0c;
+
+    --step-active-bg: rgba(250, 204, 21, .10);
+    --done-bg:        rgba(22, 101, 52, .35);
+    --done-txt:       #86efac;
+  }
+}

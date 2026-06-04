@@ -71,21 +71,8 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
 }
 
-/* hero entrance */
-.hero-item {
-  opacity: 0;
-  transform: translateY(28px);
-}
-
-@keyframes heroFadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* photo float */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
-}
+/* hero entrance — initial hide; GSAP animates in */
+.hero-item { opacity: 0; }
 
 /* cursor blink */
 .cursor {
@@ -110,7 +97,12 @@ img { max-width: 100%; display: block; }
   border: 4px solid rgba(255,255,255,.4);
   box-shadow: 0 8px 32px rgba(0,0,0,.25);
   flex-shrink: 0;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
+
+.contact-item { will-change: transform; }
 
 .profile-photo img {
   width: 100%;

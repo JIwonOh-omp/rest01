@@ -10,7 +10,6 @@
   const MAX_DIST = 130;
   let particles  = [];
   let mouse      = { x: null, y: null };
-  let raf;
 
   function resize() {
     canvas.width  = hero.offsetWidth;
@@ -49,13 +48,10 @@
 
   function loop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       p.update();
       p.draw();
-
-      // dot–dot connections
       for (let j = i + 1; j < particles.length; j++) {
         const q    = particles[j];
         const dx   = p.x - q.x;
@@ -70,8 +66,6 @@
           ctx.stroke();
         }
       }
-
-      // mouse–dot connections (accent colour)
       if (mouse.x !== null) {
         const dx   = p.x - mouse.x;
         const dy   = p.y - mouse.y;
@@ -86,14 +80,13 @@
         }
       }
     }
-
-    raf = requestAnimationFrame(loop);
+    requestAnimationFrame(loop);
   }
 
   hero.addEventListener('mousemove', (e) => {
-    const r  = canvas.getBoundingClientRect();
-    mouse.x  = e.clientX - r.left;
-    mouse.y  = e.clientY - r.top;
+    const r = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - r.left;
+    mouse.y = e.clientY - r.top;
   });
   hero.addEventListener('mouseleave', () => { mouse.x = mouse.y = null; });
 
@@ -119,45 +112,135 @@
     const word = phrases[pi];
     if (!deleting) {
       el.textContent = word.slice(0, ++ci);
-      if (ci === word.length) {
-        deleting = true;
-        setTimeout(tick, 2200);
-        return;
-      }
+      if (ci === word.length) { deleting = true; setTimeout(tick, 2200); return; }
     } else {
       el.textContent = word.slice(0, --ci);
-      if (ci === 0) {
-        deleting = false;
-        pi = (pi + 1) % phrases.length;
-      }
+      if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
     }
     setTimeout(tick, deleting ? 38 : 75);
   }
-
   setTimeout(tick, 900);
 })();
 
 
 /* =============================================
-   3. HERO — STAGGERED ENTRANCE ANIMATION
+   3. GSAP — HERO ENTRANCE (replaces CSS animation)
 ============================================= */
 (function () {
-  const items = document.querySelectorAll('.hero-item');
-  items.forEach((el, i) => {
-    el.style.animation = `heroFadeUp .7s ease forwards`;
-    el.style.animationDelay = `${0.15 + i * 0.18}s`;
+  gsap.to('.profile-photo', {
+    opacity: 1, scale: 1,
+    duration: 0.85, delay: 0.15,
+    ease: 'back.out(1.7)',
+    startAt: { opacity: 0, scale: 0.82 }
   });
-
-  // Float animation on photo (starts after entrance)
-  const photo = document.querySelector('.profile-photo');
-  photo.addEventListener('animationend', () => {
-    photo.style.animation = 'float 4s ease-in-out infinite';
-  }, { once: true });
+  gsap.to('.name', {
+    opacity: 1, y: 0,
+    duration: 0.7, delay: 0.38,
+    ease: 'power3.out',
+    startAt: { opacity: 0, y: 32 }
+  });
+  gsap.to('#typed-text, .cursor', {
+    opacity: 1,
+    duration: 0.5, delay: 0.58,
+    startAt: { opacity: 0 }
+  });
+  gsap.to('.contact-item', {
+    opacity: 1, y: 0,
+    duration: 0.6, delay: 0.72,
+    stagger: 0.12,
+    ease: 'power2.out',
+    startAt: { opacity: 0, y: 20 }
+  });
 })();
 
 
 /* =============================================
-   4. STICKY NAV — ACTIVE LINK ON SCROLL
+   4. GSAP — MAGNETIC CONTACT ITEMS  overwrite:"auto"
+============================================= */
+(function () {
+  const STRENGTH = 0.42;
+
+  document.querySelectorAll('.contact-item').forEach(btn => {
+
+    btn.addEventListener('mousemove', (e) => {
+      const r  = btn.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width  / 2)) * STRENGTH;
+      const dy = (e.clientY - (r.top  + r.height / 2)) * STRENGTH;
+      gsap.to(btn, {
+        x: dx, y: dy,
+        duration: 0.3,
+        ease: 'power2.out',
+        overwrite: 'auto'        // kills only x/y conflicts
+      });
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, {
+        x: 0, y: 0,
+        duration: 0.9,
+        ease: 'elastic.out(1.1, 0.4)',
+        overwrite: 'auto'
+      });
+    });
+
+  });
+})();
+
+
+/* =============================================
+   5. GSAP — MAGNETIC + 3-D TILT on PROFILE PHOTO
+        float → img inside container (no conflict)
+        magnetic → container itself
+============================================= */
+(function () {
+  const photo = document.querySelector('.profile-photo');
+  const img   = photo.querySelector('img');
+  if (!photo) return;
+
+  // Float the image element — isolated from the container's transform
+  gsap.to(img, {
+    y: -7,
+    duration: 2.3,
+    ease: 'sine.inOut',
+    yoyo: true,
+    repeat: -1,
+    delay: 1.2
+  });
+
+  const MAG  = 0.3;
+  const TILT = 0.14;
+
+  photo.addEventListener('mousemove', (e) => {
+    const r  = photo.getBoundingClientRect();
+    const dx = e.clientX - (r.left + r.width  / 2);
+    const dy = e.clientY - (r.top  + r.height / 2);
+
+    gsap.to(photo, {
+      x:          dx * MAG,
+      y:          dy * MAG,
+      rotationY:  dx * TILT,
+      rotationX: -dy * TILT,
+      transformPerspective: 600,
+      duration: 0.35,
+      ease: 'power2.out',
+      overwrite: 'auto'          // only kills conflicting x/y/rotation
+    });
+  });
+
+  photo.addEventListener('mouseleave', () => {
+    gsap.to(photo, {
+      x: 0, y: 0,
+      rotationY: 0, rotationX: 0,
+      duration: 1.1,
+      ease: 'elastic.out(1, 0.45)',
+      overwrite: 'auto'
+    });
+  });
+})();
+
+
+/* =============================================
+   6. STICKY NAV — ACTIVE LINK ON SCROLL
 ============================================= */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.sticky-nav a');
@@ -178,7 +261,7 @@ sections.forEach(s => navObserver.observe(s));
 
 
 /* =============================================
-   5. SECTION CARDS — SCROLL ENTRANCE
+   7. SECTION CARDS — SCROLL ENTRANCE
 ============================================= */
 const cards = document.querySelectorAll(
   '.skill-category, .timeline-item, .project-card, .cert-item, .about-content'
@@ -188,8 +271,8 @@ const cardObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity    = '1';
-        entry.target.style.transform  = 'translateY(0)';
+        entry.target.style.opacity   = '1';
+        entry.target.style.transform = 'translateY(0)';
         cardObserver.unobserve(entry.target);
       }
     });

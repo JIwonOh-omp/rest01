@@ -47,12 +47,45 @@
     <div class="hero-bg"></div>
     <canvas id="hero-canvas"></canvas>
     <div class="hero-content">
-      <div class="profile-photo hero-item">
-        <img src="images/photo.jpg" alt="오지원 프로필 사진" />
-      </div>
-      <div class="hero-text">
-        <h1 class="name hero-item">오 지 원</h1>
+
+      <!-- LEFT: 텍스트 영역 -->
+      <div class="hero-left">
+        <p class="hero-greeting hero-item">Hello, I'm</p>
+
+        <h1 class="name hero-item">
+          오지원
+          <span class="name-en">Jiwon Oh</span>
+        </h1>
+
+        <div class="status-badge hero-item">
+          <span class="status-dot"></span>
+          AI 개발자 교육 수강 중
+        </div>
+
         <p class="tagline hero-item"><span id="typed-text"></span><span class="cursor">|</span></p>
+
+        <div class="hero-stats hero-item">
+          <div class="stat-item">
+            <span class="stat-num">1년</span>
+            <span class="stat-label">QA 실무</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">2년</span>
+            <span class="stat-label">캐나다</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">935</span>
+            <span class="stat-label">TOEIC</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">AL</span>
+            <span class="stat-label">OPIc</span>
+          </div>
+        </div>
+
         <div class="contact-bar hero-item">
           <a href="mailto:jiwon98oh@naver.com" class="contact-item">
             <i class="fa fa-envelope"></i>
@@ -68,6 +101,18 @@
           </a>
         </div>
       </div>
+
+      <!-- RIGHT: 사진 영역 -->
+      <div class="hero-right hero-item">
+        <div class="photo-wrap">
+          <div class="photo-ring"></div>
+          <div class="photo-ring photo-ring--outer"></div>
+          <div class="profile-photo">
+            <img src="images/photo.jpg" alt="오지원 프로필 사진" />
+          </div>
+        </div>
+      </div>
+
     </div>
   </header>
 

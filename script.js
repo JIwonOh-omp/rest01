@@ -127,29 +127,54 @@
    3. GSAP — HERO ENTRANCE (replaces CSS animation)
 ============================================= */
 (function () {
-  gsap.to('.profile-photo', {
+  // 사진 (오른쪽)
+  gsap.to('.hero-right', {
     opacity: 1, scale: 1,
-    duration: 0.85, delay: 0.15,
-    ease: 'back.out(1.7)',
+    duration: 0.9, delay: 0.1,
+    ease: 'back.out(1.5)',
     startAt: { opacity: 0, scale: 0.82 }
   });
+  // 인사말
+  gsap.to('.hero-greeting', {
+    opacity: 1, y: 0,
+    duration: 0.55, delay: 0.25,
+    ease: 'power3.out',
+    startAt: { opacity: 0, y: 20 }
+  });
+  // 이름
   gsap.to('.name', {
     opacity: 1, y: 0,
     duration: 0.7, delay: 0.38,
     ease: 'power3.out',
-    startAt: { opacity: 0, y: 32 }
+    startAt: { opacity: 0, y: 28 }
   });
+  // 상태 배지
+  gsap.to('.status-badge', {
+    opacity: 1, y: 0,
+    duration: 0.5, delay: 0.52,
+    ease: 'power2.out',
+    startAt: { opacity: 0, y: 16 }
+  });
+  // 타이핑 커서
   gsap.to('#typed-text, .cursor', {
     opacity: 1,
-    duration: 0.5, delay: 0.58,
+    duration: 0.4, delay: 0.63,
     startAt: { opacity: 0 }
   });
+  // 스탯 행
+  gsap.to('.hero-stats', {
+    opacity: 1, y: 0,
+    duration: 0.55, delay: 0.72,
+    ease: 'power2.out',
+    startAt: { opacity: 0, y: 16 }
+  });
+  // 연락처 버튼
   gsap.to('.contact-item', {
     opacity: 1, y: 0,
-    duration: 0.6, delay: 0.72,
-    stagger: 0.12,
+    duration: 0.5, delay: 0.82,
+    stagger: 0.1,
     ease: 'power2.out',
-    startAt: { opacity: 0, y: 20 }
+    startAt: { opacity: 0, y: 14 }
   });
 })();
 
@@ -190,11 +215,11 @@
 /* =============================================
    5. GSAP — MAGNETIC + 3-D TILT on PROFILE PHOTO
         float → img inside container (no conflict)
-        magnetic → container itself
+        magnetic → .photo-wrap (ring 포함 전체 이동)
 ============================================= */
 (function () {
-  const photo = document.querySelector('.profile-photo');
-  const img   = photo.querySelector('img');
+  const photo = document.querySelector('.photo-wrap');
+  const img   = document.querySelector('.profile-photo img');
   if (!photo) return;
 
   // Float the image element — isolated from the container's transform
